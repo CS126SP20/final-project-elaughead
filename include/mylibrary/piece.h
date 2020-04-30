@@ -18,12 +18,7 @@ class piece {
  public:
   piece(){};
 
-  piece(const int x, const int y)
-      : id{generateId()},
-        x{x},
-        y{y} {
-
-        };
+  piece(const int x, const int y){};
 
   piece(const piece& p) {
     pieceId = p.pieceId;
