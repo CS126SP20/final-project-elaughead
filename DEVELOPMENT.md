@@ -14,3 +14,4 @@
     - helped someone out on piazza who was having trouble with ImGui.
 
 04/30/20 - committed & pushed code that I forgot to last night. Between yesterday and today, I've created the pieces and their logic, and I've begun to make new classes for other aspects of the app.
+Also the person I was helping on Piazza finally got ImGui to work! yay

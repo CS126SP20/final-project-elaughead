@@ -25,6 +25,7 @@ void MyApp::setup() {
 void MyApp::update() { }
 
 void MyApp::draw() {
+    ImGui::Text("Hello world!");
 
 
 
