@@ -9,14 +9,16 @@
 #include <random>
 
 namespace mylibrary {
+
 enum class Shape{L,T,Z,S,I,J,O,Empty};
+
 class pieceCreation {
   pieceCreation();
   ~pieceCreation();
 
-  piece getPiece(const Shape& s, const int c, int x, int y) const;
+  piece getPiece(const Shape& s, int c, int x, int y) const;
 
-  piece randomPiece(const int x, const int y) const;
+  piece randomPiece(int x, int y) const;
 };
 }
 #endif  // FINALPROJECT_PIECECREATION_H

@@ -1,11 +1,11 @@
 // Copyright (c) 2020 [Your Name]. All rights reserved.
 
 #include "my_app.h"
-#include "CinderImGui.h"
-
 
 #include <cinder/app/App.h>
+#include <cinder/gl/wrapper.h>
 
+#include "CinderImGui.h"
 
 namespace myapp {
 
@@ -25,6 +25,7 @@ void MyApp::setup() {
 void MyApp::update() { }
 
 void MyApp::draw() {
+    cinder::gl::clear();
     ImGui::Text("Hello world!");
 
 
