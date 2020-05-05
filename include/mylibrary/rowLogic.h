@@ -37,9 +37,9 @@ class rowLogic {
 
   int checkRows();
 
-  void removeRow(int row);
+  void removeRow(const int row);
 
-  void addPiece(piece& p);
+  void addPiece(const piece& p);
 
   void clear();
 };

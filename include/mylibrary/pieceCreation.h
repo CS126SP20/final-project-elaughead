@@ -13,9 +13,10 @@ namespace mylibrary {
 enum class Shape{L,T,Z,S,I,J,O,Empty};
 
 class pieceCreation {
-  pieceCreation();
-  ~pieceCreation();
 
+ public:
+  ~pieceCreation();
+  pieceCreation();
   piece getPiece(const Shape& s, int c, int x, int y) const;
 
   piece randomPiece(int x, int y) const;

@@ -36,7 +36,7 @@ void rowLogic::removeRow(int row) {
   }
 }
 
-void rowLogic::addPiece(piece &p) {
+void rowLogic::addPiece(const piece &p) {
 
   int x = p.getX();
   int y = p.getY();
