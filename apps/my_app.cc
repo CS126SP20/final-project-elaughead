@@ -23,12 +23,16 @@ void MyApp::setup() {
 void MyApp::update() { }
 
 void MyApp::draw() {
-    cinder::gl::clear();
-    //ImGui::Text("Hello world!");
-    //drawGameArea();
+  cinder::gl::enableAlphaBlending();
+  cinder::gl::clear(cinder::Color(252, 0, 236));
+
+  //drawGameArea();
+
+
   ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
   ImGui::Begin("Red Window");
   ImGui::PopStyleColor();
+  ImGui::Text("Hello world!");
   ImGui::End();
 
 

@@ -15,3 +15,11 @@
 
 04/30/20 - committed & pushed code that I forgot to last night. Between yesterday and today, I've created the pieces and their logic, and I've begun to make new classes for other aspects of the app.
 Also the person I was helping on Piazza finally got ImGui to work! yay
+
+05/03/20 - starting writing more code for the app, still focusing on functions and not the app itself.
+
+05/04/20 - got most of the regular functions done, beginning to start the GUI implementation.
+
+05/05/20 - lots of work done today, mainly in my_app.cc/.h. Not much work with ImGui yet, but I'll get there soon.
+
+05/06/2020 - dawn of the final day, 24 hours remain.
