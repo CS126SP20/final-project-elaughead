@@ -14,8 +14,8 @@ namespace mylibrary {
 class gameplay : public updater2 {
  private:
 
-  int height;
-  int width;
+  int height = 4;
+  int width = 4;
   int score = 0;
   int lines = 0;
   int level = 1;
@@ -27,7 +27,7 @@ class gameplay : public updater2 {
 
  public:
   gameplay()
-      :width{width}, height{height},
+      :width{width = 20}, height{height = 20},
   blockGroup{rowLogic(width, height)}, pieceCreation1{pieceCreation()} {
 
   };

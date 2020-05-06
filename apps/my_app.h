@@ -3,21 +3,19 @@
 #ifndef FINALPROJECT_APPS_MYAPP_H_
 #define FINALPROJECT_APPS_MYAPP_H_
 
+#define SCALE 25
+
 #include <cinder/app/App.h>
 #include "CinderImGui.h"
 #include <mylibrary/gameplay.h>
-
-
+#include "cinder/Area.h"
 
 namespace myapp {
 
 class MyApp : public cinder::app::App {
  public:
 
-  MyApp() {
-    initComp();
-    initSlots();
-  };
+  MyApp() {};
   void setup() override;
   void update() override;
   void draw() override;
@@ -30,16 +28,16 @@ class MyApp : public cinder::app::App {
   bool gameRunning = false;
   mylibrary::gameplay board;
 
-  void keyPressEvent();
+
+  void keyPressedEvent(cinder::app::KeyEvent);
   void timeSet();
 
-  void initComp();
-  void initSlots();
 
   void startGame();
   void endGame();
 
   void drawGameArea();
+  void gameAreaGui();
   void drawPiece(std::vector<cinder::Color> color);
   void drawGroup(std::vector<cinder::Color> color);
 
