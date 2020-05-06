@@ -40,8 +40,8 @@ class MyApp : public cinder::app::App {
   void endGame();
 
   void drawGameArea();
-  void drawPiece();
-  void drawGroup();
+  void drawPiece(std::vector<cinder::Color> color);
+  void drawGroup(std::vector<cinder::Color> color);
 
 };
 
