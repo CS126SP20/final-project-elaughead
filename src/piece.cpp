@@ -31,4 +31,8 @@ void piece::moveLeft() {
 void piece::moveDown() {
   y++;
 }
+
+bool piece::dimension() const {
+  return !shape.empty();
+}
 }

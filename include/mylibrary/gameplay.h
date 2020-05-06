@@ -26,8 +26,8 @@ class gameplay : public updater2 {
   piece nextPiece;
 
  public:
-
-  gameplay(int width, int height) :width{width}, height{height},
+  gameplay()
+      :width{width}, height{height},
   blockGroup{rowLogic(width, height)}, pieceCreation1{pieceCreation()} {
 
   };
