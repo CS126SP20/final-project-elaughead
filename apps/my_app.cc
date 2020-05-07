@@ -29,25 +29,6 @@ void MyApp::draw() {
   //gameAreaGui();
   drawGameArea();
 }
-//void MyApp::keyPressedEvent(cinder::app::KeyEvent event) {
-  //switch (event.getCode()) {
-   // case KeyEvent::KEY_SPACE: {
-      //startGame();
-    //}
-    //case KeyEvent::KEY_UP: {
-     // board.rotatePiece();
-   // }
-    //case KeyEvent::KEY_DOWN: {
-     // board.moveDown();
-    //}
-    //case KeyEvent::KEY_LEFT: {
-     // board.moveLeft();
-    //}
-    //case KeyEvent::KEY_RIGHT: {
-     // board.moveRight();
-    //}
-  //}
-//}
 
 void MyApp::keyPressedEvent(KeyEvent event) {
 

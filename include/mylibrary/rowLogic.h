@@ -7,6 +7,7 @@
 
 #include "piece.h"
 
+
 namespace mylibrary {
 class rowLogic {
  private:
