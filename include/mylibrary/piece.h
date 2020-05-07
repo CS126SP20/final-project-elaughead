@@ -16,10 +16,13 @@ class piece {
   std::vector<std::vector<int>> shape;
 
  public:
+
+  //constructor
   piece(){};
 
   piece(const int x, const int y) :pieceId{ generateId()}, x{ x}, y{ y}{};
 
+  //assigning variables
   piece(const piece &p) {
     pieceId = p.pieceId;
     x = p.x;
@@ -39,6 +42,7 @@ class piece {
   void setX(const int x) { this->x = x; }
   void setY(const int y) { this->y = y; }
 
+  //generate ID
   const static int generateId() {
     pieceIds++;
     return pieceIds;

@@ -13,3 +13,20 @@ TEST_CASE("Random sanity test", "[random]") {
   REQUIRE(0. <= random);
   REQUIRE(random <= 1.);
 }
+
+TEST_CASE("Testing piece.cpp", "[piece]") {
+  int x;
+  int y;
+  std::vector<std::vector<int>> shape;
+
+  REQUIRE(x == 0);
+  REQUIRE(y == 0);
+
+  SECTION("Move Right") {
+    //piece.moveRight();
+  }
+}
+
+TEST_CASE("Testing rowLogic.cpp", "[rowLogic]") {
+
+}

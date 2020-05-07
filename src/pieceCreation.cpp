@@ -6,10 +6,13 @@
 
 namespace mylibrary {
 
+//Constructor
 pieceCreation::pieceCreation() {}
 
+//Deconstructor
 pieceCreation::~pieceCreation() {}
 
+//Creates the pieces based on their names
 piece pieceCreation::getPiece(const mylibrary::Shape& s, const int c, int x,
                               int y) const {
   piece l = piece(x,y);
@@ -68,6 +71,8 @@ piece pieceCreation::getPiece(const mylibrary::Shape& s, const int c, int x,
   }
   return l;
   }
+
+  //Generates a random piece using Mersenne Twister 19937 generator
   piece pieceCreation::randomPiece(const int x, const int y) const {
 
   std::random_device random2;

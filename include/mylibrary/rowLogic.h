@@ -25,6 +25,7 @@ class rowLogic {
     }
   }
 
+  //getters
   int getWidth() const {
     return width;
   }
@@ -35,12 +36,16 @@ class rowLogic {
     return rowPile;
   }
 
+  //Checks the rows to see if any are full
   int checkRows();
 
+  //removes the row if it is full
   void removeRow(const int row);
 
+  //adds a piece to the group
   void addPiece(const piece& p);
 
+  //clears the group
   void clear();
 };
 }

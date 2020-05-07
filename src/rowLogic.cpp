@@ -8,6 +8,7 @@
 
 namespace mylibrary {
 
+//checks the rows to see if any are full. if true, calls removeRow().
 int rowLogic::checkRows() {
 
   int remove = 0;
@@ -27,6 +28,7 @@ int rowLogic::checkRows() {
   return remove;
 }
 
+//Removes a row if it is full
 void rowLogic::removeRow(int row) {
   for (int i = row; i >= 1; i--) {
     for (int j = 0; j < width; j++) {
@@ -38,6 +40,7 @@ void rowLogic::removeRow(int row) {
   }
 }
 
+//adds a piece to the group when it falls down all the way
 void rowLogic::addPiece(const piece &p) {
 
   int x = p.getX();
@@ -57,6 +60,7 @@ void rowLogic::addPiece(const piece &p) {
   }
 }
 
+//clears the rows
 void rowLogic::clear() {
   for (auto & row : rowPile) {
     for (auto & block : row) {

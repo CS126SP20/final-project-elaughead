@@ -3,7 +3,6 @@
 #ifndef FINALPROJECT_APPS_MYAPP_H_
 #define FINALPROJECT_APPS_MYAPP_H_
 
-#define SCALE 25
 
 #include <cinder/app/App.h>
 #include "CinderImGui.h"

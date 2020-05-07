@@ -23,3 +23,7 @@ Also the person I was helping on Piazza finally got ImGui to work! yay
 05/05/20 - lots of work done today, mainly in my_app.cc/.h. Not much work with ImGui yet, but I'll get there soon.
 
 05/06/2020 - dawn of the final day, 24 hours remain.
+began working at around 11am, currently 10:30pm. I've done so much work today, mostly on my_app.cc. 
+No matter how hard I tried, I couldn't get the pieces to show up on my screen. I had friends look at my code,
+and they couldn't figure it out either. I feel like I got so close to finishing.
+Added comments and wrote tests.

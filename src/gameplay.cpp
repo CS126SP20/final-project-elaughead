@@ -7,10 +7,12 @@
 
 namespace mylibrary{
 
+
 gameplay::~gameplay() {
 
 }
 
+//generates the next piece
 void gameplay::generateNextPiece() {
   if (!nextPiece.dimension()) {
     nextPiece = pieceCreation1.randomPiece(width / 2 - 1, 0);
@@ -27,11 +29,13 @@ void gameplay::generateNextPiece() {
 
 }
 
+//moves the piece down as the timer goes
 bool gameplay::timeSet() {
   movePieceDown();
   return true;
 }
 
+//generates the next piece if the piece has landed
 bool gameplay::isLanded() {
   if (checksIsLanded()) {
     blockGroup.addPiece(currentPiece);
@@ -50,6 +54,7 @@ bool gameplay::isLanded() {
   return false;
 }
 
+//checks to see if a piece has landed or not
 bool gameplay::checksIsLanded() const {
 
   int x = currentPiece.getX();
@@ -70,6 +75,7 @@ bool gameplay::checksIsLanded() const {
   return false;
 }
 
+//moves the piece right
 bool gameplay::movePieceRight() {
   piece piece2 = piece{ currentPiece };
   piece2.moveRight();
@@ -82,6 +88,7 @@ bool gameplay::movePieceRight() {
   return false;
 }
 
+//moves the piece left
 bool gameplay::movePieceLeft() {
   piece piece2 = piece{ currentPiece };
   piece2.moveLeft();
@@ -94,6 +101,7 @@ bool gameplay::movePieceLeft() {
   return false;
 }
 
+//moves the piece down
 bool gameplay::movePieceDown() {
   piece piece2 = piece{ currentPiece };
   piece2.moveDown();
@@ -106,6 +114,7 @@ bool gameplay::movePieceDown() {
   return false;
 }
 
+//rotates the piece
 void gameplay::rotatePiece() {
 
   piece piece2 = piece{ currentPiece };
@@ -117,10 +126,12 @@ void gameplay::rotatePiece() {
   }
 }
 
+//checks if the piece is touching the group or out of bounds
 bool gameplay::checkTouchingPiece(const piece &p) const {
   return checkTouchingGroup(p) || ooB(p);
 }
 
+//adds piece to the group if it is touching
 bool gameplay::checkTouchingGroup(const piece &p) const {
 
   if (ooB(p)) {
@@ -143,6 +154,7 @@ bool gameplay::checkTouchingGroup(const piece &p) const {
   return false;
 }
 
+//determines if out of bounds or not
 bool gameplay::ooB(const piece &p) const {
 
   int x = p.getX();
@@ -160,6 +172,7 @@ bool gameplay::ooB(const piece &p) const {
   return false;
 }
 
+//clears the group, resets everything
 void gameplay::clear() {
 
   blockGroup.clear();

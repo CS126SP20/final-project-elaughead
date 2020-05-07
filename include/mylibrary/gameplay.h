@@ -26,13 +26,18 @@ class gameplay : public updater2 {
   piece nextPiece;
 
  public:
+
+  //constructor
   gameplay()
       :width{width = 20}, height{height = 20},
   blockGroup{rowLogic(width, height)}, pieceCreation1{pieceCreation()} {
 
   };
+
+  //deconstructor
   ~gameplay();
 
+  //getters
   int getWidth() const {
     return width;
   }
@@ -58,28 +63,40 @@ class gameplay : public updater2 {
     return blockGroup;
   }
 
+  //generates the next piece randomly
   void generateNextPiece();
 
+  //sets the timer
   bool timeSet();
 
+  //logic for a piece that has landed
   bool isLanded();
 
+  //checks to see if the piece has landed
   bool checksIsLanded() const;
 
+  //moves piece right
   bool movePieceRight();
 
+  //moves piece left
   bool movePieceLeft();
 
+  //moves piece down
   bool movePieceDown();
 
+  //roatates piece
   void rotatePiece();
 
+  //checks if a piece is touching another piece
   bool checkTouchingPiece(const piece& p) const;
 
+  //checks if the piece is touching the group
   bool checkTouchingGroup(const piece& p) const;
 
+  //out of bounds
   bool ooB(const piece& p) const;
 
+  //clears board
   void clear();
 
 };
