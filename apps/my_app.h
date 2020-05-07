@@ -12,6 +12,7 @@
 
 namespace myapp {
 
+
 class MyApp : public cinder::app::App {
  public:
 
@@ -44,6 +45,7 @@ class MyApp : public cinder::app::App {
   void initComp();
 
 };
+
 
 }  // namespace myapp
 

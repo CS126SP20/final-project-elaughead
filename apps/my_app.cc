@@ -5,9 +5,12 @@
 #include <cinder/app/App.h>
 #include <cinder/gl/draw.h>
 #include <cinder/gl/wrapper.h>
+#include <stdint.h>
+#include <stdlib.h>
 
-#include "CinderImGui.h"
-
+//#include "CinderImGui.h"
+using namespace ci;
+using namespace ci::app;
 namespace myapp {
 
 using cinder::app::KeyEvent;
@@ -107,12 +110,6 @@ void myapp::MyApp::startGame() {
 void myapp::MyApp::endGame() { timer.stop(); }
 
 void myapp::MyApp::drawGameArea() {
-
-  cinder::gl::drawSolidRect(cinder::Rectf(getWindowWidth()/2-20.0f,
-                                          getWindowHeight()/2-20.0f,
-                                          getWindowWidth()/2+20.0f,
-                                          getWindowHeight()/2+20.0f ));
-
   cinder::gl::clear(cinder::Color(252, 0, 236));
   const std::vector<cinder::Color> colors = {
       cinder::Color::hex(0x00FFFF), cinder::Color::hex(0xFFFF00),
@@ -199,6 +196,8 @@ void myapp::MyApp::gameAreaGui() {
 
   ImGui::End();
 }
+
+
 
 }
 

@@ -80,4 +80,5 @@ piece pieceCreation::getPiece(const mylibrary::Shape& s, const int c, int x,
 
   return getPiece(s, color, x, y);
 }
+
 }
