@@ -29,7 +29,7 @@ class MyApp : public cinder::app::App {
   mylibrary::gameplay board;
 
 
-  void keyPressedEvent(cinder::app::KeyEvent);
+  void keyDown(cinder::app::KeyEvent) override;
   void timeSet();
 
 
@@ -42,6 +42,7 @@ class MyApp : public cinder::app::App {
   void drawGroup(std::vector<cinder::Color> color);
 
   void initComp();
+  void PieceGui(bool* p_open);
 
 };
 

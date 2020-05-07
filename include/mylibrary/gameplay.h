@@ -10,15 +10,19 @@
 #include "updater.h"
 
 
+
 namespace mylibrary {
 class gameplay : public updater2 {
  private:
 
-  int height = 4;
-  int width = 4;
+  float timer = 0;
+  float delay = 0.3;
+  int height = 20;
+  int width = 20;
   int score = 0;
   int lines = 0;
   int level = 1;
+
 
   rowLogic blockGroup;
   pieceCreation pieceCreation1;

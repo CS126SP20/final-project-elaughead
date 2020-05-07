@@ -25,7 +25,7 @@ void gameplay::generateNextPiece() {
 
   isLanded();
 
-  notify();
+  //notify();
 
 }
 
