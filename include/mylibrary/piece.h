@@ -18,9 +18,9 @@ class piece {
  public:
   piece(){};
 
-  piece(const int x, const int y){};
+  piece(const int x, const int y) :pieceId{ generateId()}, x{ x}, y{ y}{};
 
-  piece(const piece& p) {
+  piece(const piece &p) {
     pieceId = p.pieceId;
     x = p.x;
     y = p.y;

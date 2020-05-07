@@ -66,11 +66,11 @@ class gameplay : public updater2 {
 
   bool checksIsLanded() const;
 
-  bool moveRight();
+  bool movePieceRight();
 
-  bool moveLeft();
+  bool movePieceLeft();
 
-  bool moveDown();
+  bool movePieceDown();
 
   void rotatePiece();
 

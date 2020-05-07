@@ -72,7 +72,7 @@ piece pieceCreation::getPiece(const mylibrary::Shape& s, const int c, int x,
 
   std::random_device random2;
   std::mt19937 mt(random2());
-  std::uniform_real_distribution<double> dist(.0, 1000.0);
+  std::uniform_real_distribution<double> dist(1.0, 1000.0);
 
   Shape  s = Shape((int)dist(mt) % 7);
 

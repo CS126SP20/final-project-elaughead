@@ -4,6 +4,8 @@
 
 #include "mylibrary/rowLogic.h"
 
+#include <cinder/Exception.h>
+
 namespace mylibrary {
 
 int rowLogic::checkRows() {
@@ -47,7 +49,7 @@ void rowLogic::addPiece(const piece &p) {
     for (int j = 0; j < shape[i].size(); j++) {
       if (shape[i][j] > 0) {
         if (y + i < 0 || x + j < 0) {
-
+          throw cinder::Exception{"out of bounds"};
         }
         rowPile[y + i][x + j] = shape[i][j];
       }

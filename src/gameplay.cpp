@@ -13,12 +13,12 @@ gameplay::~gameplay() {
 
 void gameplay::generateNextPiece() {
   if (!nextPiece.dimension()) {
-    nextPiece = pieceCreation().randomPiece(width / 2 - 1, 0);
+    nextPiece = pieceCreation1.randomPiece(width / 2 - 1, 0);
     nextPiece.setY(nextPiece.getShape().size()*(-1));
   }
 
   currentPiece = nextPiece;
-  nextPiece = pieceCreation().randomPiece(width / 2 - 1, 0);
+  nextPiece = pieceCreation1.randomPiece(width / 2 - 1, 0);
   nextPiece.setY(nextPiece.getShape().size()*(-1));
 
   isLanded();
@@ -28,7 +28,7 @@ void gameplay::generateNextPiece() {
 }
 
 bool gameplay::timeSet() {
-  moveDown();
+  movePieceDown();
   return true;
 }
 
@@ -70,7 +70,7 @@ bool gameplay::checksIsLanded() const {
   return false;
 }
 
-bool gameplay::moveRight() {
+bool gameplay::movePieceRight() {
   piece piece2 = piece{ currentPiece };
   piece2.moveRight();
 
@@ -82,7 +82,7 @@ bool gameplay::moveRight() {
   return false;
 }
 
-bool gameplay::moveLeft() {
+bool gameplay::movePieceLeft() {
   piece piece2 = piece{ currentPiece };
   piece2.moveLeft();
 
@@ -94,7 +94,7 @@ bool gameplay::moveLeft() {
   return false;
 }
 
-bool gameplay::moveDown() {
+bool gameplay::movePieceDown() {
   piece piece2 = piece{ currentPiece };
   piece2.moveDown();
 

@@ -5,7 +5,6 @@
 #include <cinder/app/App.h>
 #include <cinder/gl/draw.h>
 #include <cinder/gl/wrapper.h>
-#include <string>
 
 #include "CinderImGui.h"
 
@@ -19,15 +18,21 @@ void MyApp() {}
 void MyApp::setup() { ImGui::initialize(); }
 
 void MyApp::update() {
-
-  gameAreaGui();
+ // gameAreaGui();
 }
 
 void MyApp::draw() {
   cinder::gl::enableAlphaBlending();
+  gameAreaGui();
   drawGameArea();
+  cinder::gl::drawSolidRect(cinder::Rectf(getWindowWidth()/2-200.0f,
+                                          getWindowHeight()/2-200.0f,
+                                          getWindowWidth()/2+300.0f,
+                                          getWindowHeight()/2+300.0f ));
+
+
 }
-//void MyApp::keyDown(cinder::app::KeyEvent event) {
+//void MyApp::keyPressedEvent(cinder::app::KeyEvent event) {
   //switch (event.getCode()) {
    // case KeyEvent::KEY_SPACE: {
       //startGame();
@@ -47,23 +52,24 @@ void MyApp::draw() {
   //}
 //}
 
-void MyApp::keyDown(KeyEvent event) {
+void MyApp::keyPressedEvent(KeyEvent event) {
   ImGuiIO& io = ImGui::GetIO();
   (void)io;
  io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
   if (ImGui::IsKeyPressed('p')) {
+    ImGui::Text("hello");
     startGame();
   }
   if (gameRunning) {
     try {
       if (ImGui::IsKeyPressed('d')) {
-        board.moveRight();
+        board.movePieceRight();
       }
       if (ImGui::IsKeyPressed('a')) {
-        board.moveLeft();
+        board.movePieceLeft();
       }
       if (ImGui::IsKeyPressed('s')) {
-        board.moveDown();
+        board.movePieceDown();
       }
       if (ImGui::IsKeyPressed('w')) {
         board.rotatePiece();
@@ -95,12 +101,18 @@ void myapp::MyApp::startGame() {
   gameRunning = true;
   board.generateNextPiece();
   // might need to change this to an if statement like above
-  timer.start(0);
+  //timer.start(800);
 }
 
 void myapp::MyApp::endGame() { timer.stop(); }
 
 void myapp::MyApp::drawGameArea() {
+
+  cinder::gl::drawSolidRect(cinder::Rectf(getWindowWidth()/2-20.0f,
+                                          getWindowHeight()/2-20.0f,
+                                          getWindowWidth()/2+20.0f,
+                                          getWindowHeight()/2+20.0f ));
+
   cinder::gl::clear(cinder::Color(252, 0, 236));
   const std::vector<cinder::Color> colors = {
       cinder::Color::hex(0x00FFFF), cinder::Color::hex(0xFFFF00),
@@ -110,11 +122,10 @@ void myapp::MyApp::drawGameArea() {
   mylibrary::rowLogic p = board.getGroup();
 
 
-  // set background color
-
 
   drawGroup(colors);
   drawPiece(colors);
+
 }
 
 void myapp::MyApp::drawPiece(std::vector<cinder::Color> color) {
@@ -146,12 +157,10 @@ void myapp::MyApp::drawGroup(std::vector<cinder::Color> color) {
 }
 
 void myapp::MyApp::gameAreaGui() {
-  cinder::gl::clear(cinder::Color(252, 0, 236));
-  ImGui::SetNextWindowSize(
-      ImVec2(board.getWidth() * 30, board.getHeight() * 30));
-  ImGui::Begin("Tetris");
+
+  ImGui::Begin("Tetris2");
   ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding
-  , ImVec2(0, 18));
+      , ImVec2(0, 18));
   ImGui::PushStyleColor(ImGuiCol_ChildWindowBg, ImVec4(0.16f, 0.16f, 0.16f, 1.00f));
   ImVec2 toolbarSize(100, 100);
   ImGui::BeginChild("name", toolbarSize, false);
@@ -187,7 +196,6 @@ void myapp::MyApp::gameAreaGui() {
   ImGui::EndChild();
   ImGui::PopStyleColor();
   ImGui::PopStyleVar();
-
 
   ImGui::End();
 }

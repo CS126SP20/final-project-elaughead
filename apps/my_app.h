@@ -15,11 +15,11 @@ namespace myapp {
 class MyApp : public cinder::app::App {
  public:
 
-  MyApp() {};
+  MyApp(){}
   void setup() override;
   void update() override;
   void draw() override;
-  void keyDown(cinder::app::KeyEvent) override;
+  //void keyDown(cinder::app::KeyEvent) override;
 
 
  private:
@@ -40,6 +40,8 @@ class MyApp : public cinder::app::App {
   void gameAreaGui();
   void drawPiece(std::vector<cinder::Color> color);
   void drawGroup(std::vector<cinder::Color> color);
+
+  void initComp();
 
 };
 
